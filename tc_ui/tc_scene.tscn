@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1hg5ykjmp4aq"]
+
+[ext_resource type="Script" uid="uid://dm3hd63er70nj" path="res://tc_ui/tc_scn_main.gd" id="1_o6aje"]
+[ext_resource type="Script" uid="uid://g6nq7ttfpa8a" path="res://tc_ui/tc_btn_pause.gd" id="2_b8nxi"]
+[ext_resource type="Texture2D" uid="uid://moscl6xc1c87" path="res://tc_ui/tc_gui_texture.png" id="2_o6aje"]
+[ext_resource type="Script" uid="uid://bcte2jx07n2vy" path="res://tc_ui/tc_btn_slow.gd" id="3_b8nxi"]
+[ext_resource type="Script" uid="uid://lma3enmiecqm" path="res://tc_ui/tc_btn_normal.gd" id="4_c27gv"]
+[ext_resource type="Script" uid="uid://xw4pgwsyb110" path="res://tc_ui/tc_btn_fast.gd" id="5_3ewbi"]
+[ext_resource type="Script" uid="uid://een0syjydvvn" path="res://tc_ui/tc_lb_game_speed.gd" id="7_sp5r5"]
+
+[node name="TimeControl" type="CanvasLayer"]
+script = ExtResource("1_o6aje")
+
+[node name="Horizontal" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.0
+offset_right = 156.0
+grow_horizontal = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Pause" type="Control" parent="Horizontal"]
+layout_mode = 2
+
+[node name="Pause" type="NinePatchRect" parent="Horizontal/Pause"]
+texture_filter = 1
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o6aje")
+region_rect = Rect2(176, 144, 16, 16)
+
+[node name="Pause" type="Button" parent="Horizontal/Pause/Pause"]
+self_modulate = Color(1, 0.352941, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("2_b8nxi")
+
+[node name="Slow" type="Control" parent="Horizontal"]
+layout_mode = 2
+
+[node name="Slow" type="NinePatchRect" parent="Horizontal/Slow"]
+texture_filter = 1
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o6aje")
+region_rect = Rect2(96, 176, 16, 16)
+
+[node name="Slow" type="Button" parent="Horizontal/Slow/Slow"]
+self_modulate = Color(0.0823529, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("3_b8nxi")
+
+[node name="Normal" type="Control" parent="Horizontal"]
+layout_mode = 2
+
+[node name="Normal" type="NinePatchRect" parent="Horizontal/Normal"]
+texture_filter = 1
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o6aje")
+region_rect = Rect2(112, 144, 16, 16)
+
+[node name="Normal" type="Button" parent="Horizontal/Normal/Normal"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("4_c27gv")
+
+[node name="Fast" type="Control" parent="Horizontal"]
+layout_mode = 2
+
+[node name="Fast" type="NinePatchRect" parent="Horizontal/Fast"]
+texture_filter = 1
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_o6aje")
+region_rect = Rect2(96, 176, 16, 16)
+
+[node name="Fast" type="Button" parent="Horizontal/Fast/Fast"]
+self_modulate = Color(1, 0.418967, 0.294718, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("5_3ewbi")
+
+[node name="CurrentSpeed" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Game Speed: "
+script = ExtResource("7_sp5r5")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -23.0
+offset_right = 148.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press HOME to print debug on console"
+horizontal_alignment = 2
